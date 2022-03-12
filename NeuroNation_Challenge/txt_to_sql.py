@@ -5,7 +5,7 @@ from pathlib import Path
 import sqlite3
 
 directory = '../raw_data'
-Path('cocktails_database.db').touch()
+Path('cocktails_database.sqlite').touch()
 
 def txt_to_csv():
 
@@ -25,7 +25,7 @@ def csv_to_sql():
 
     '''CSV files are loaded into a SQL file, creating a database'''
 
-    conn = sqlite3.connect('cocktails_database.db')
+    conn = sqlite3.connect('cocktails_database.sqlite')
     c = conn.cursor()
     for file in os.listdir(directory):
         if file.endswith(".csv"):
