@@ -39,5 +39,6 @@ def csv_to_sql():
     c.execute(sql_query)
     print("List of tables\n")
     print(c.fetchall())
+    conn.close()
 
 csv_to_sql()
