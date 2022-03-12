@@ -1,5 +1,5 @@
-# Project: NeuroNation_Challenge
-  - SQL Challenge for NeuroNation
+# Project: SQL_Challenge
+  - Data manipulation with Python and SQL
 
 # Description & Steps
   - Virtual env and project repository were created;

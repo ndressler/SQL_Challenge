@@ -14,7 +14,7 @@ def txt_to_csv():
 
     for file in os.listdir(directory):
         if file.endswith(".txt"):
-            filename = file.strip('.txt')
+            filename = file.split('.txt')[0]
             df = pd.read_csv(f'{directory}/{file}')  #creates dataframe\
             df.to_csv('{}/{}.csv'.format(directory,filename),index=None)  #stores df in a csv file
 
@@ -29,13 +29,15 @@ def csv_to_sql():
     c = conn.cursor()
     for file in os.listdir(directory):
         if file.endswith(".csv"):
-            filename = file.strip('.csv')
+            filename = file.split('.csv')[0]
             df = pd.read_csv(f'{directory}/{file}')
-            columns = [col for col in df.columns]
-            c.execute(
-                '''CREATE TABLE {} ({})'''.format(filename, columns)
-            )
-            df.to_sql(f'data/{filename}', conn, if_exists='append',
+            #print(filename,df)
+            df.to_sql(f'{filename}', conn, if_exists='replace',
                       index=False)  # write the data to sqlite table
+    sql_query = """SELECT name FROM sqlite_master
+    WHERE type='table';"""
+    c.execute(sql_query)
+    print("List of tables\n")
+    print(c.fetchall())
 
 csv_to_sql()
