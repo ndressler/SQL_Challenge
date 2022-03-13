@@ -131,4 +131,9 @@ g_not_used= c.fetchall()
 g_not_used = [x[0] for x in g_not_used]
 print("\nTask 16:\nThis are the glasses that are never used in any cocktail: "+(', '.join(g_not_used)))
 
+# Task 17: which cocktails do you talk about (table COCKTAIL _PERSON)? Output the names of the cocktails!
+
+
+
+
 conn.commit()

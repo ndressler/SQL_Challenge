@@ -1,6 +1,5 @@
 <! –– This is the xml version of the png scheme ––>
 
-
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
 <!-- Active URL: https://kitt.lewagon.com/db/55455 -->
@@ -62,7 +61,7 @@
 <part>cid</part>
 </key>
 </table>
-<table x="438" y="153" name="cocktail_local">
+<table x="424" y="251" name="cocktail_local">
 <row name="cid" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="cocktail_person" row="cid" />
@@ -77,22 +76,24 @@
 <part>cid</part>
 </key>
 </table>
-<table x="239" y="37" name="cocktail_person">
+<table x="211" y="56" name="cocktail_person">
 <row name="cid" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default><relation table="cocktail" row="cid" />
 </row>
 <row name="pid1" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<default>NULL</default><relation table="person" row="pid" />
+</row>
 <row name="pid2" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
-<default>NULL</default></row>
+<default>NULL</default><relation table="person" row="pid" />
+</row>
 <key type="PRIMARY" name="">
 <part>cid</part>
 </key>
 </table>
-<table x="536" y="296" name="glas">
+<table x="869" y="317" name="glas">
 <row name="gid" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -103,7 +104,7 @@
 <part>gid</part>
 </key>
 </table>
-<table x="1037" y="341" name="ingredient">
+<table x="1036" y="259" name="ingredient">
 <row name="zid" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -134,7 +135,7 @@
 <part>zid</part>
 </key>
 </table>
-<table x="752" y="298" name="person">
+<table x="182" y="239" name="person">
 <row name="pid" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -148,7 +149,7 @@
 <part>pid</part>
 </key>
 </table>
-<table x="203" y="305" name="local">
+<table x="672" y="286" name="local">
 <row name="lid" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
