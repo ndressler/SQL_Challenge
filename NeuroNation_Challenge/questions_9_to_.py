@@ -103,7 +103,21 @@ rest_cock_8or11= c.fetchall()
 rest_cock_8or11 = [x[0] for x in rest_cock_8or11]
 print("\nTask 14:\nThis are the restaurants that offer the cocktails with the ID 8 or 11: "+(', '.join(rest_cock_8or11)))
 
-# Task 15: 
+# Task 15: Which cocktail is alcoholic and is served in the 'cocktailglas'?
+
+c.execute('''
+SELECT cocktail.cname
+FROM cocktail
+WHERE cocktail.alkoholisch='y' AND cocktail.gid IN (
+    SELECT glas.gid
+    FROM glas
+    WHERE glas.gname='Cocktailglas'
+    )
+''')
+cockglas_alco= c.fetchall()
+cockglas_alco = [x[0] for x in cockglas_alco]
+print("\nTask 15:\nThis are the cocktails that are alcoholic and are served in the Cocktail Glass: "+(', '.join(cockglas_alco)))
+
 
 
 conn.commit()
