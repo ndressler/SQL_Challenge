@@ -118,6 +118,17 @@ cockglas_alco= c.fetchall()
 cockglas_alco = [x[0] for x in cockglas_alco]
 print("\nTask 15:\nThis are the cocktails that are alcoholic and are served in the Cocktail Glass: "+(', '.join(cockglas_alco)))
 
+# Task 16: Which glasses are never used?
 
+c.execute('''
+SELECT glas.gname 
+FROM glas 
+WHERE glas.gid NOT IN (
+    SELECT cocktail.gid 
+    FROM cocktail)
+''')
+g_not_used= c.fetchall()
+g_not_used = [x[0] for x in g_not_used]
+print("\nTask 16:\nThis are the glasses that are never used in any cocktail: "+(', '.join(g_not_used)))
 
 conn.commit()
