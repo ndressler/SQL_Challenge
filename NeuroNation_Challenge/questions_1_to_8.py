@@ -1,5 +1,5 @@
 '''
-This python file will be used to answer all the question made for the SQL Challenge,
+This python file will be used to answer all the question 1 to made for the SQL Challenge,
 the task will be presente as a comment and bellow will be the answer and the respective code.
 '''
 
@@ -82,7 +82,7 @@ for x in range(len(all_people)):
     for z in range(x + 1, len(all_people)):
         if x != z:
             matches.append((all_people[x],(all_people[z])))
-#print("\nTask 5:\nHere's the list of all round paired playes for the drinking game:\n"+ '\n'.join(map(str, matches)))
+print("\nTask 5:\nHere's the list of all round paired playes for the drinking game:\n"+ '\n'.join(map(str, matches)))
 
 # Task 6: Display the names of all glasses and cocktails in a single-column table. Use a suitable quantity operation.
 
