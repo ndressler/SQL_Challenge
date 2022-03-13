@@ -3,6 +3,7 @@ This python file will be used to answer all the question made for the SQL Challe
 the task will be presente as a comment and bellow will be the answer and the respective code.
 '''
 
+from os import confstr_names
 import sqlite3
 
 conn = sqlite3.connect('cocktails_database.sqlite')
@@ -81,8 +82,20 @@ for x in range(len(all_people)):
     for z in range(x + 1, len(all_people)):
         if x != z:
             matches.append((all_people[x],(all_people[z])))
-print("\nTask 5:\nHwere's the list of all round paired playes for the drinking game:\n"+ '\n'.join(map(str, matches)))
+#print("\nTask 5:\nHere's the list of all round paired playes for the drinking game:\n"+ '\n'.join(map(str, matches)))
 
 # Task 6: Display the names of all glasses and cocktails in a single-column table. Use a suitable quantity operation.
 
+c.execute('''
+SELECT cocktail.cname,
+glas.gname
+FROM Glas
+LEFT JOIN Cocktail ON cocktail.gid = glas.gid
+''')
+gs_and_cs= c.fetchall()
+all_gscs = [z for x in gs_and_cs for z in x if z 
+!= None]
+all_gscs = list(dict.fromkeys(all_gscs)) 
+print("\nTask 6:\nHere's the list of  names of all glasses and cocktails: "+(', '.join(all_gscs)))
 
+# Task 7: for which cocktails there is still no recipe in the database (which cocktails are not mentioned in ZUTAT_COCKTAIL)?
