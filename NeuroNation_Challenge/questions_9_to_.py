@@ -88,10 +88,22 @@ DELETE FROM My_cocktails WHERE My_cocktails.cid IN (
 ''')
 print("\nTask 13:\nCocktails that contained the ingredient 'Campari' were deleted.")
 
-# Task 14: 
+# Task 14: which restaurants offer cocktails with ID 8 or ID 11?
 
+c.execute('''
+SELECT local.lname
+FROM local
+WHERE local.lid IN (
+    SELECT cocktail_local.lid
+    FROM cocktail_local
+    WHERE cocktail_local.cid=8 OR cocktail_local.cid=11
+    )
+''')
+rest_cock_8or11= c.fetchall()
+rest_cock_8or11 = [x[0] for x in rest_cock_8or11]
+print("\nTask 14:\nThis are the restaurants that offer the cocktails with the ID 8 or 11: "+(', '.join(rest_cock_8or11)))
 
-
+# Task 15: 
 
 
 conn.commit()
