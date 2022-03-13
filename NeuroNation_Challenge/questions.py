@@ -93,9 +93,39 @@ FROM Glas
 LEFT JOIN Cocktail ON cocktail.gid = glas.gid
 ''')
 gs_and_cs= c.fetchall()
-all_gscs = [z for x in gs_and_cs for z in x if z 
-!= None]
+all_gscs = [z for x in gs_and_cs for z in x if z != None]
 all_gscs = list(dict.fromkeys(all_gscs)) 
 print("\nTask 6:\nHere's the list of  names of all glasses and cocktails: "+(', '.join(all_gscs)))
 
-# Task 7: for which cocktails there is still no recipe in the database (which cocktails are not mentioned in ZUTAT_COCKTAIL)?
+# Task 7: for which cocktails there is still no recipe in the database (which cocktails are not mentioned in INGREDIENT_COCKTAIL)?
+ 
+c.execute('''
+SELECT cocktail.cname 
+FROM cocktail 
+WHERE cocktail.cname NOT IN (
+    SELECT cocktail.cname 
+    from ingredient_cocktail
+    LEFT JOIN cocktail ON cocktail.cid = ingredient_cocktail.cid)
+''')
+c_ing_missing= c.fetchall()
+c_ing_missing = [x[0] for x in c_ing_missing]
+print("\nTask 7:\nThis are the cocktails which recipe are still not in the database: "+(', '.join(c_ing_missing)))
+
+# Task 8:  In which restaurants is no Knieweich served?
+
+c.execute('''
+SELECT local.lname
+FROM local
+WHERE local.lid NOT IN (
+    SELECT cocktail_local.lid
+    FROM cocktail_local
+    WHERE cocktail_local.cid = (
+        SELECT cocktail.cid
+        FROM cocktail
+        WHERE cocktail.cname='Knieweich'
+    )
+)
+''')
+rest_not_knieweich= c.fetchall()
+rest_not_knieweich = [x[0] for x in rest_not_knieweich]
+print("\nTask 8:\nThis are the restaurants where Knieweich is not serverd: "+(', '.join(rest_not_knieweich)))
