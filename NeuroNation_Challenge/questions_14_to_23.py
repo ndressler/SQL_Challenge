@@ -28,7 +28,7 @@ WHERE local.lid IN (
 ''')
 rest_cock_8or11= c.fetchall()
 rest_cock_8or11 = [x[0] for x in rest_cock_8or11]
-print("\nTask 14:\nThis are the restaurants that offer the cocktails with the ID 8 or 11: "+(', '.join(rest_cock_8or11)))
+print("Task 14:\nThis are the restaurants that offer the cocktails with the ID 8 or 11: "+(', '.join(rest_cock_8or11)))
 
 # Task 15: Which cocktail is alcoholic and is served in the 'cocktailglas'?
 

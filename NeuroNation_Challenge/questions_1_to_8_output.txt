@@ -1,0 +1,117 @@
+Task 1:
+This are the names of all cocktails that exist in the database: BlauerBaum, Russentod, Bond007, Donnergurgler, Knieweich, Cola_gruen, BlaueOma, GelbeHose, Pot, Down, Alexander, Americano, Bronx, Daiquiri, Manhattan, Stinger, Zombie
+
+Task 2:
+This are all the identity numbers of the locals that belong to the postal code 39108: 1, 2, 12
+This are all the names of the locals that belong to the postal code 39108: Klamauk, bagel, P 70
+Lastly, the postal code 39108 belongs to only one city: Magdeburg
+
+Task 3:
+This are all postal codes: 39104, 39106, 39108, 39112, 39114, 39128
+
+Task 4:
+The ingredients that have an alcohol content greater than 30 are: Tequila, Curacao Triple Sec, weisser Rum, brauner Rum, Apricot Brandy, Weinbrand, Canadian Whisky
+
+Task 5:
+Here's the list of all round paired playes for the drinking game:
+('Kaiservonchina', 'Thomas')
+('Kaiservonchina', 'Vannara')
+('Kaiservonchina', 'Luana')
+('Kaiservonchina', 'Sabine')
+('Kaiservonchina', 'Masako')
+('Kaiservonchina', 'Fanny')
+('Kaiservonchina', 'Hyekyoung')
+('Kaiservonchina', 'Elrid')
+('Kaiservonchina', 'Cintia')
+('Kaiservonchina', 'Aya')
+('Kaiservonchina', 'Silvana')
+('Kaiservonchina', 'Elena')
+('Kaiservonchina', 'Aurelie')
+('Thomas', 'Vannara')
+('Thomas', 'Luana')
+('Thomas', 'Sabine')
+('Thomas', 'Masako')
+('Thomas', 'Fanny')
+('Thomas', 'Hyekyoung')
+('Thomas', 'Elrid')
+('Thomas', 'Cintia')
+('Thomas', 'Aya')
+('Thomas', 'Silvana')
+('Thomas', 'Elena')
+('Thomas', 'Aurelie')
+('Vannara', 'Luana')
+('Vannara', 'Sabine')
+('Vannara', 'Masako')
+('Vannara', 'Fanny')
+('Vannara', 'Hyekyoung')
+('Vannara', 'Elrid')
+('Vannara', 'Cintia')
+('Vannara', 'Aya')
+('Vannara', 'Silvana')
+('Vannara', 'Elena')
+('Vannara', 'Aurelie')
+('Luana', 'Sabine')
+('Luana', 'Masako')
+('Luana', 'Fanny')
+('Luana', 'Hyekyoung')
+('Luana', 'Elrid')
+('Luana', 'Cintia')
+('Luana', 'Aya')
+('Luana', 'Silvana')
+('Luana', 'Elena')
+('Luana', 'Aurelie')
+('Sabine', 'Masako')
+('Sabine', 'Fanny')
+('Sabine', 'Hyekyoung')
+('Sabine', 'Elrid')
+('Sabine', 'Cintia')
+('Sabine', 'Aya')
+('Sabine', 'Silvana')
+('Sabine', 'Elena')
+('Sabine', 'Aurelie')
+('Masako', 'Fanny')
+('Masako', 'Hyekyoung')
+('Masako', 'Elrid')
+('Masako', 'Cintia')
+('Masako', 'Aya')
+('Masako', 'Silvana')
+('Masako', 'Elena')
+('Masako', 'Aurelie')
+('Fanny', 'Hyekyoung')
+('Fanny', 'Elrid')
+('Fanny', 'Cintia')
+('Fanny', 'Aya')
+('Fanny', 'Silvana')
+('Fanny', 'Elena')
+('Fanny', 'Aurelie')
+('Hyekyoung', 'Elrid')
+('Hyekyoung', 'Cintia')
+('Hyekyoung', 'Aya')
+('Hyekyoung', 'Silvana')
+('Hyekyoung', 'Elena')
+('Hyekyoung', 'Aurelie')
+('Elrid', 'Cintia')
+('Elrid', 'Aya')
+('Elrid', 'Silvana')
+('Elrid', 'Elena')
+('Elrid', 'Aurelie')
+('Cintia', 'Aya')
+('Cintia', 'Silvana')
+('Cintia', 'Elena')
+('Cintia', 'Aurelie')
+('Aya', 'Silvana')
+('Aya', 'Elena')
+('Aya', 'Aurelie')
+('Silvana', 'Elena')
+('Silvana', 'Aurelie')
+('Elena', 'Aurelie')
+
+Task 6:
+Here's the list of  names of all glasses and cocktails: BlauerBaum, Floete, Cola_gruen, Down, Schwenker, Knieweich, Kelch, BlaueOma, Schale, Bond007, Donnergurgler, Stiefel, Pot, Russentod, Weinglas, Sektglas, GelbeHose, Bierglas, Bierkrug, Flasche, Alexander, Cocktailglas, Americano, Bronx, Manhattan, Stinger, Daiquiri, Tumbler, Zombie, Longdrinkglas
+
+Task 7:
+This are the cocktails which recipe are still not in the database: BlauerBaum, Russentod, Donnergurgler, Cola_gruen, Down, Alexander, Americano, 
+Bronx, Daiquiri, Stinger, Zombie
+
+Task 8:
+This are the restaurants where Knieweich is not serverd: Klamauk, Alcatraz, El Greco, Falstaff, Rubens, P 70, Zum Alten Dessauer

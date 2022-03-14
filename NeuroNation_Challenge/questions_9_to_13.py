@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS My_Cocktails AS
     FROM cocktail
 ''')
 #conn.commit()
-print("\nTask 9:\nTable was created and added to the database.")
+print("Task 9:\nTable was created and added to the database.")
 
 # Task 10: insert a new cocktail "Purple cow" in the table MY_COCKTAILS. 
 # The cocktail is alcoholic, served in a snifter and has the ID 18.

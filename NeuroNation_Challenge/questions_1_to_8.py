@@ -93,8 +93,8 @@ print("\nTask 5:\nHere's the list of all round paired playes for the drinking ga
 c.execute('''
 SELECT cocktail.cname,
     glas.gname
-FROM Glas
-LEFT JOIN Cocktail ON cocktail.gid = glas.gid
+FROM Glas, cocktail
+WHERE cocktail.gid = glas.gid
 ''')
 gs_and_cs= c.fetchall()
 all_gscs = [z for x in gs_and_cs for z in x if z != None]
@@ -109,7 +109,7 @@ FROM cocktail
 WHERE cocktail.cname NOT IN (
     SELECT cocktail.cname 
     from ingredient_cocktail
-    LEFT JOIN cocktail ON cocktail.cid = ingredient_cocktail.cid)
+    WHERE cocktail.cid = ingredient_cocktail.cid)
 ''')
 c_ing_missing= c.fetchall()
 c_ing_missing = [x[0] for x in c_ing_missing]

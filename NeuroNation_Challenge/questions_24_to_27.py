@@ -21,22 +21,33 @@ c = conn.cursor()
 #(a) The number of ingredients per cocktail.
 
 c.execute('''
-
+SELECT Cocktail.cname,
+    COUNT(Ingredient_Cocktail.zid)
+FROM Ingredient_Cocktail, Cocktail
+WHERE Ingredient_Cocktail.cid = Cocktail.cid
+GROUP BY Cocktail.cid
 ''')
-x = c.fetchall()
-
-
-
-
-
-
-
+ing_per_cocktail = c.fetchall()
+print("Task 24:\nThis are the number of ingredients per cocktail:")
+for i in ing_per_cocktail:
+    if i[1] == 1:
+        print(f"The cocktail {i[0]} has {i[1]} ingredient.")
+    else: print(f"The cocktail {i[0]} has {i[1]} ingredients.")
 
 #(b) The number of ingredients per cocktail is required, but only for cocktails with more than 2 ingredients.
 
 c.execute('''
+SELECT Cocktail.cname,
+    COUNT(Ingredient_Cocktail.zid)
+FROM Ingredient_Cocktail, Cocktail
+WHERE Ingredient_Cocktail.cid = Cocktail.cid
+GROUP BY Cocktail.cid
+HAVING COUNT(*) > 2
 ''')
-x = c.fetchall()
+more_than_2_ing = c.fetchall()
+print("\nTask 25:\nThis are the number of ingredients for the cocktails that require more than 2:")
+for i in more_than_2_ing:
+    print(f"The cocktail {i[0]} has {i[1]} ingredients.")
 
 #(c) The sum of the units of measure of the respective ingredients per cocktail is sought.
 
