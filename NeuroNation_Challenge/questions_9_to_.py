@@ -182,9 +182,27 @@ if_local_serves_cocktails= c.fetchall()
 if_local_serves_cocktails = [x[0] for x in if_local_serves_cocktails]
 print("\nTask 20:\n"+(', '.join(if_local_serves_cocktails)))
 
+# Task 21: How many ingredients are there?
+
+c.execute('''
+SELECT COUNT(DISTINCT ingredient.zid) FROM ingredient
+''') #counting all rows except null or duplicates
+count_ing= c.fetchall()
+count_ing = [x[0] for x in count_ing]
+print("\nTask 21:\nThere are "+(str(count_ing)[1:-1])+" ingredients in total.")
+
+# Task 22: What is the average alcohol content of the ingredients?
+
+c.execute('''
+Select avg(ingredient.alkoholgehalt) from ingredient
+''')
+avg_alcohol= c.fetchall()
+avg_alcohol = avg_alcohol[0][0]
+avg_alcohol_rounded = round(float(avg_alcohol))
+print(f"\nTask 21:\nThere average of alcohol content of the ingredients is {avg_alcohol}, or {avg_alcohol_rounded} if rounded up, according to the table Ingredients (not My_Ingredientes)")
 
 
-
+# task 23: 
 
 
 conn.commit()
