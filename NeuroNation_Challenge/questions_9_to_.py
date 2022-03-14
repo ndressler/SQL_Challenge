@@ -3,8 +3,10 @@ This python file will be used to answer all the question 1 to made for the SQL C
 the task will be presente as a comment and bellow will be the answer and the respective code.
 '''
 
+from csv import list_dialects
 from os import confstr_names
 import sqlite3
+from threading import local
 
 conn = sqlite3.connect('cocktails_database.sqlite')
 c = conn.cursor()
@@ -132,6 +134,55 @@ g_not_used = [x[0] for x in g_not_used]
 print("\nTask 16:\nThis are the glasses that are never used in any cocktail: "+(', '.join(g_not_used)))
 
 # Task 17: which cocktails do you talk about (table COCKTAIL _PERSON)? Output the names of the cocktails!
+
+c.execute('''
+SELECT cocktail.cname 
+FROM cocktail 
+WHERE cocktail.cid IN (
+    SELECT Cocktail_person.cid 
+    FROM Cocktail_person)
+''')
+talk_cocktails= c.fetchall()
+talk_cocktails = [x[0] for x in talk_cocktails]
+print("\nTask 17:\nThis are the cocktails that are talked about: "+(', '.join(talk_cocktails)))
+
+# Task 18: Which ingredients have an alcohol content between 0 and 50?
+
+c.execute('''
+SELECT ingredient.zname 
+FROM ingredient 
+WHERE ingredient.alkoholgehalt BETWEEN 0 AND 50
+''')
+ing_alcohol= c.fetchall()
+ing_alcohol = [x[0] for x in ing_alcohol]
+print("\nTask 18:\nThis are the ingredients that have an alcohol content between 0 and 50 according to the table Ingredients (not My_Ingredientes): "+(', '.join(ing_alcohol)))
+
+# Task 19: What personal names begin with S?
+
+c.execute('''
+SELECT person.name 
+FROM person 
+WHERE person.name LIKE 'S%'
+''')
+name_s= c.fetchall()
+name_s = [x[0] for x in name_s]
+print("\nTask 19:\nThis are the personal names begin with S: "+(', '.join(name_s)))
+
+# Task 20: Is there a place that doesn't serve cocktails?
+
+c.execute('''
+SELECT IFNULL (max('All places serve cocktails.'), 'Some places do not serve any cocktails.')
+FROM  Cocktail_local
+WHERE Cocktail_local.lid IN (
+    SELECT local.lid
+    FROM local
+)
+''')
+if_local_serves_cocktails= c.fetchall()
+if_local_serves_cocktails = [x[0] for x in if_local_serves_cocktails]
+print("\nTask 20:\n"+(', '.join(if_local_serves_cocktails)))
+
+
 
 
 
