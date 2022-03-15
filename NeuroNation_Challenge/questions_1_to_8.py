@@ -21,7 +21,6 @@ FROM cocktail
 name_of_all_cocktails = c.fetchall()
 print('Task 1:\nThis are the names of all cocktails that exist in the database: '+', '.join([x[0] for x in name_of_all_cocktails])+'\n')
 
-
 # Task 2: Find all the information about places that have the postal code 39108.
 
 c.execute('''
@@ -30,35 +29,22 @@ FROM local
 WHERE local.plz = 39108
 ''')
 zipinfo_39108 = c.fetchall()
-
-lid_zip39108 = [] #local's id
-lname_zip39108 = [] #local's name
-stadt_zip39108 = [] #local's city
-
-for tuple in zipinfo_39108:
-    lid_zip39108.append(tuple[0])
-    lname_zip39108.append(tuple[1])
-    stadt_zip39108.append(tuple[3])
-
-stadt_zip39108 = list(dict.fromkeys(stadt_zip39108)) # to exclude repetitive cities
-
 print('Task 2:')
-print("This are all the identity numbers of the locals that belong to the postal code 39108: "+(str(lid_zip39108)[1:-1]))
-print("This are all the names of the locals that belong to the postal code 39108: "+(', '.join(lname_zip39108)))
-print("Lastly, the postal code 39108 belongs to only one city: "+(', '.join(stadt_zip39108))+"\n")
+print(f"This are all the identity numbers of the locals that belong to the postal code 39108: {str([x[0] for x in zipinfo_39108])[1:-1]}")
+print(f"This are all the names of the locals that belong to the postal code 39108: {(', '.join([x[1] for x in zipinfo_39108]))}")
+print(f"Lastly, the postal code 39108 belongs to the following cities: {(', '.join([x[3] for x in zipinfo_39108]))}")
 
 # Task 3: Provide all postal codes (without duplicates).
 
 c.execute('''
-SELECT local.plz
+SELECT DISTINCT local.plz
 FROM local
 ORDER BY
     plz ASC
 ''')
 all_zips = c.fetchall()
-all_zips = list(dict.fromkeys(all_zips)) # remove duplicates
 all_zips_clean = [x[0] for x in all_zips] # remove of tuple
-print("Task 3:\nThis are all postal codes: "+(str(all_zips_clean)[1:-1]))
+print("\nTask 3:\nThis are all postal codes: "+(str(all_zips_clean)[1:-1]))
 
 # Task 4: Which ingredient has an alcohol content greater than 30?
 
@@ -68,7 +54,7 @@ FROM ingredient
 WHERE ingredient.ALKOHOLGEHALT >= 30
 ''')
 alcohol_30 = c.fetchall()
-alcohol_30 = [x[0] for x in alcohol_30]
+alcohol_30 = [x[0] for x in alcohol_30] # remove of tuple
 print("\nTask 4:\nThe ingredients that have an alcohol content greater than 30 are: "+(', '.join(alcohol_30)))
 
 # Task 5: In a drinking game, everyone should play with everyone. Display the corresponding list of game pairs (Name, Name).

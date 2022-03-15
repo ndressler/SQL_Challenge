@@ -11,7 +11,8 @@ Task 17:
 This are the cocktails that are talked about: Americano, Bronx, Daiquiri, Manhattan, Stinger, Zombie
 
 Task 18:
-This are the ingredients that have an alcohol content between 0 and 50 according to the table Ingredients (not My_Ingredientes): Tequila, Curacao Triple Sec, Limettensaft, Apricot Brandy, Ananassaft, Zitronensaft, Weinbrand, Creme de Menthe, Cointreau, Canadian Whisky, Vermouth rosso, Campari
+This are the ingredients that have an alcohol content between 0 and 50 according to the table Ingredients (not My_Ingredientes): Tequila, Curacao 
+Triple Sec, Limettensaft, Apricot Brandy, Ananassaft, Zitronensaft, Weinbrand, Creme de Menthe, Cointreau, Canadian Whisky, Vermouth rosso, Campari
 
 Task 19:
 This are the personal names begin with S: Sabine, Silvana
