@@ -7,7 +7,7 @@ This are the cocktails that are alcoholic and are served in the Cocktail Glass: 
 Task 16:
 This are the glasses that are never used in any cocktail: Weinglas, Sektglas, Bierkrug, Flasche
 
-Task 17:
+Task 17: 
 This are the cocktails that are talked about: Americano, Bronx, Daiquiri, Manhattan, Stinger, Zombie
 
 Task 18:

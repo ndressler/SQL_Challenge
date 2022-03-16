@@ -5,7 +5,7 @@ The cocktail Knieweich has 3 ingredients.
 The cocktail BlaueOma has 1 ingredient.
 The cocktail GelbeHose has 2 ingredients.
 The cocktail Pot has 3 ingredients.
-The cocktail Manhattan has 5 ingredients.
+The cocktail Manhattan has 5 ingredients. 
 
 Task 24(b):
 This are the number of ingredients for the cocktails that require more than 2:
