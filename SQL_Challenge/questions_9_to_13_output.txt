@@ -1,0 +1,14 @@
+Task 9:
+Table was created and added to the database.
+
+Task 10:
+New row with new cocktail created in My_Cocktails.
+
+Task 11:
+Purple Cow cocktail renamed to Blue Cow.
+
+Task 12:
+My_Ingredient table created and Knieweich's ingredients alcohol content was corrected.
+
+Task 13:
+Cocktails that contained the ingredient 'Campari' were deleted.
